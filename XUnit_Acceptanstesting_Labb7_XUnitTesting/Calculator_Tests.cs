@@ -22,17 +22,23 @@ namespace XUnit_Acceptanstesting_Labb7_XUnitTesting
             //Assert
             Assert.Equal(expected,calculator.total);
         }
-        [Fact]
-        public void DivisionTestValue()
+
+        [Theory]
+        [InlineData(25, 5, 5)]
+        [InlineData(2, 2, 1)]
+        [InlineData(5, 2, 2.5)]
+        [InlineData(-100, -10, 10)]
+        [InlineData(10, 100, 0.1)]
+        public void DivisionTestValue(decimal value1, decimal value2, decimal expected)
         {
             //Arrange
             Calculator calculator = new Calculator();
 
             //Act
-            calculator.Division(25, 5);
+            calculator.Division(value1, value2);
 
             //Arrange
-            Assert.Equal(5,calculator.total);
+            Assert.Equal(expected,calculator.total);
         }
 
         [Theory]

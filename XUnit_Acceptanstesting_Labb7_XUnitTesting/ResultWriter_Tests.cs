@@ -27,7 +27,6 @@ namespace XUnit_Acceptanstesting_Labb7_XUnitTesting
             //Assert
             Assert.Equal(expected, outputString);
 
-
         }
     }
 }
