@@ -34,27 +34,32 @@ namespace XUnit_Acceptanstesting_Labb7
                         calculator.Addition(x,y);
                         results.WriteResult(calculator.result);
                         logger.LogResult(calculator.result);
+                        PressEnter();
                         break;
                     case "2":
                         var (a, b) = input.CalculatorUserInput();
                         calculator.Subtraction(a,b);
                         results.WriteResult(calculator.result);
                         logger.LogResult(calculator.result);
+                        PressEnter();
                         break;
                     case "3":
                         var (c, d) = input.CalculatorUserInput();
                         calculator.Multiplication(c, d);
                         results.WriteResult(calculator.result);
                         logger.LogResult(calculator.result);
+                        PressEnter();
                         break;
                     case "4":
                         var (e, f) = input.CalculatorUserInput();
                         calculator.Division(e, f);
                         results.WriteResult(calculator.result);
                         logger.LogResult(calculator.result);
+                        PressEnter();
                         break;
                     case "5":
                         logger.SeeLogResult();
+                        PressEnter();
                         break;
                     case "6":
                         exit = true;
@@ -65,6 +70,17 @@ namespace XUnit_Acceptanstesting_Labb7
                 }
             }
         }
-        
+        public static void PressEnter()
+        {
+
+            Console.WriteLine("\ntryck på ENTER för meny");
+
+            ConsoleKeyInfo x;
+            do
+            {
+                x = Console.ReadKey();
+            }
+            while (x.Key != ConsoleKey.Enter);
+        }
     }
 }
