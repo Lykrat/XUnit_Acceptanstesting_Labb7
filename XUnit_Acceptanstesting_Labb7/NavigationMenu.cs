@@ -53,8 +53,11 @@ namespace XUnit_Acceptanstesting_Labb7
                     case "4":
                         var (e, f) = input.CalculatorUserInput();
                         calculator.Division(e, f);
-                        results.WriteResult(calculator.result);
-                        logger.LogResult(calculator.result);
+                        if (calculator.result != "0")
+                        {
+                            results.WriteResult(calculator.result);
+                            logger.LogResult(calculator.result);
+                        }
                         PressEnter();
                         break;
                     case "5":

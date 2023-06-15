@@ -34,8 +34,16 @@ namespace XUnit_Acceptanstesting_Labb7
         }
         public void Division(decimal firstNumber, decimal secondNumber)
         {
-            total = firstNumber / secondNumber;
-            result = ($"{firstNumber} / {secondNumber} = {total}");
+            if (secondNumber == 0)
+            {
+                Console.WriteLine("Can't divide by zero");
+                result = "0";
+            }
+            else
+            {
+                total = firstNumber / secondNumber;
+                result = ($"{firstNumber} / {secondNumber} = {total}");
+            }
         }
     }
 }
